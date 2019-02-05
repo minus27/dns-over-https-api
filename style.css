@@ -1,0 +1,43 @@
+/* CSS files add styling rules to your content */
+
+body {
+  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  margin: 2em;
+}
+
+h1 {
+  font-style: italic;
+  color: #373fff;
+}
+
+label {
+  font-weight: bold;
+}
+
+input {
+  width: 30em;
+}
+
+table tr td:first-of-type {
+  text-align: right;
+}
+
+button:disabled {
+  color: lightgray;
+}
+
+#webUrl, #apiUrl {
+  display: block;
+  unicode-bidi: embed;
+  font-family: monospace;
+  white-space: pre;
+  font-weight: bold;
+}
+
+#xhrError {
+  color: red;
+}
+
+#xhrOutput {
+  text-align: left;
+}

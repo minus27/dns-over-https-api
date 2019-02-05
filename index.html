@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Google DNS-over-HTTPS API</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>  
+  <body onload="prepPage()">
+    <h1>Google DNS-over-HTTPS API <a id="helpLink" href="https://developers.google.com/speed/public-dns/docs/dns-over-https" target="_blank">?</a></h1>
+    <table>
+      <tr>
+        <td><label for="name">Domain Name:</label></td>
+        <td>
+          <input id="name" type="text" onkeyup="checkDomainName(this.value)">
+          <button id="invAddrButton" disabled="disabled" onclick="getInvAddr()">Do/Undo Inverse Address</button>
+        </td>
+      </tr>
+      <tr>
+        <td><label for="type">Record Type:</label></td>
+        <td>
+          <select id="type"></select>
+        </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td style="padding-bottom: 1em">
+          <button id="askButton" disabled="disabled" onclick="resolveDomainName()">Ask</button>
+          <button onclick="location.reload()">Clear</button>
+        </td>
+      </tr>
+      <tr style="display:none">
+        <td><label>API Error:</label></td>
+        <td id="xhrError"></td>
+      </tr>
+      <tr style="display:none">
+        <td><label>Web URL:</label></td>
+        <td id="webUrl"></td>
+      </tr>
+      <tr style="display:none">
+        <td><label>API URL:</label></td>
+        <td id="apiUrl"></td>
+      </tr>
+    </table>
+    <div style="display:none">
+      <pre id="xhrOutput"></pre>
+    </div>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+<!--
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>
+-->
+  </body>
+</html>
